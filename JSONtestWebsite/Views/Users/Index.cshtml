@@ -1,0 +1,72 @@
+﻿@model IEnumerable<JSONtestWebsite.Models.User>
+
+@{
+    ViewBag.Title = "List of Users";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address.city)
+        </th>
+        <th>
+            Latitude
+        </th>
+        <th>
+            Longitude
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Website
+        </th>
+        <th>
+            Company Name
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        // Create the list of these clients
+        <tr>
+            <td>@item.id</td>
+            <td>@item.name</td>
+            <td>@item.username</td>
+            <td>@item.email</td>
+
+            <td>@item.address.city</td>
+            <td>@item.address.geo.lat</td>
+            <td>@item.address.geo.lng</td>
+
+            <td>@item.phone</td>
+            <td>@item.website</td>
+            <td>@item.company.name</td>
+            <td>
+                <a href="~/Client/Update/@item.id">Update</a>
+                <a href="~/Client/Delete/@item.id">Delete</a>
+            </td>
+        </tr>
+
+
+    }
+
+</table>
