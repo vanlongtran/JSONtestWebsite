@@ -1,8 +1,11 @@
 # JSONtestWebsite
 JSON api demo website with asp.net 4.6MVC5
 
+
 Demo site for practicing json and asp.net MVC
+
 12/5/2017 - User list retrieve and presented sucessfully
+
 12/7/2017 - Comments and Posts and retrieved.
 
 
