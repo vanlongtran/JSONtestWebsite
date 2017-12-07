@@ -1,20 +1,23 @@
-﻿using Newtonsoft.Json;
+﻿using JSONtestWebsite.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
-using static JSONtestWebsite.Models.UserModel;
+using static JSONtestWebsite.Models.CommentModel;
 
 namespace JSONtestWebsite.Controllers
 {
-    public class UsersController : Controller
+    public class CommentController : Controller
     {
-        //GET: Users
+        //GET: Comment
         public async Task<ActionResult> Index()
         {
-            List<User> UserInfo = new List<User>();
+            List<Comment> result = new List<Comment>();
 
             using (var client = new HttpClient())
             {
@@ -27,22 +30,17 @@ namespace JSONtestWebsite.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource 
-                HttpResponseMessage Res = await client.GetAsync("https://jsonplaceholder.typicode.com/users");
+                HttpResponseMessage Res = await client.GetAsync("https://jsonplaceholder.typicode.com/comments");
 
                 //Check response sucessful
                 if (Res.IsSuccessStatusCode)
                 {
                     var Response = Res.Content.ReadAsStringAsync().Result;
-                    UserInfo = JsonConvert.DeserializeObject<List<User>>(Response);
-
+                    result = JsonConvert.DeserializeObject<List<Comment>>(Response);
                 }
                 //Return the User list to view
-                return View(UserInfo);
+                return View(result);
             }
         }
-
-        //Update
-
-        //Delete
     }
 }

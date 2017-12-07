@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JSONtestWebsite.Models.CommentModel.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Comment Page</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.postId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.body)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.postId</td>
+            <td>@item.id</td>
+            <td>@item.name</td>
+            <td>@item.email</td>
+            <td>@item.body</td>           
+        </tr>
+    }
+</table>
