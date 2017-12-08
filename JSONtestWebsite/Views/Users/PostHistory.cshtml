@@ -1,0 +1,56 @@
+﻿@model JSONtestWebsite.Models.UserModel.PostHistory
+
+@{
+    ViewBag.Title = "PostHistory";
+}
+<head>
+    <style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+table#t01 tr {
+    background: white;
+}
+
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <h2>PostHistory</h2>
+
+    <p>User: @Model.name ID: @Model.id </p>
+
+    
+
+
+    @foreach (var s in Model.post)
+    {
+        <table id="t01">
+            <tr>
+                <th colspan="3">Post ID: @s.id </th>
+            </tr>
+            <tr>
+                <td><strong>Title:</strong> @s.title</td>
+            </tr>
+            <tr>
+                <td>@s.body</td>
+            </tr>
+            <tr></tr>
+
+        </table>
+
+    }
+   
+</body>

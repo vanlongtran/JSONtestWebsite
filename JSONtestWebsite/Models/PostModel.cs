@@ -16,14 +16,12 @@ namespace JSONtestWebsite.Models
 
         public class Posting
         {
-            public int postId { get; set; }
+            public int userId { get; set; }
             public int id { get; set; }
-            public string name { get; set; }
-            public string email { get; set; }
+            public string title { get; set; }
             public string body { get; set; }
         }
-
     }
 
-    
+
 }

@@ -173,6 +173,7 @@
     <Content Include="Views\Post\PostSearchResult.cshtml" />
     <Content Include="Views\Post\Search.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\Users\PostHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

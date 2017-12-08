@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using static JSONtestWebsite.Models.PostModel;
+using static JSONtestWebsite.Models.UserModel;
 
 namespace JSONtestWebsite.Models
 {
@@ -40,6 +42,15 @@ namespace JSONtestWebsite.Models
             public string city { get; set; }
             public string zipcode { get; set; }
             public Geo geo { get; set; }
+        }
+
+        public class PostHistory
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+            public string username { get; set; }
+            public string email { get; set; }
+            public List<Posting> post { get; set; }
         }
     }
 }

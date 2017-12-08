@@ -20,6 +20,5 @@ namespace JSONtestWebsite.Models
             public string email { get; set; }
             public string body { get; set; }
         }
-
     }
 }
